@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <!-- My CSS -->
+    <title>Monte Carlo Endowment Model</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- Header plugins -->
+      <script src="../static/js/nav.js"></script> <!-- navbar -->
+      <!-- <script src="../static/js/jumbo-header.js"></script>  -->
+      <div class='jumbotron jumbotron-fluid' style='text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .2);'>
+        <div class='container'>
+          <h1 class='display-5'><strong>Monte</strong>Carlo</h1>
+          <p class='lead'>Endowment Simulation Model</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="card col-md-3">
+            <div class="card-body">
+              <h3>Choose Values</h2><hr>
+              <p class="small text-muted text-right">Use Monte Carlo</p>
+              <!-- FORM -->
+              <form method=post enctype=multipart/form-data >
+                <!-- Input 1 -->
+                <div class="form-group row">
+                  <!-- Label -->
+                  <label for="input1" class="col-sm-auto col-form-label">Input 1</label>
+                  <!-- Input -->
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="input1" placeholder="A">
+                  </div>
+                  <!-- Checkbox -->
+                  <div class="col-sm-auto">
+                    <div class="form-check">
+                      <label class="btn btn-primary active" for="gridCheck1">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1" autocomplete="off">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Input 2 -->
+                <div class="form-group row">
+                  <!-- Label -->
+                  <label for="input2" class="col-sm-auto col-form-label">Input 2</label>
+                  <!-- Input -->
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="input2" placeholder="B">
+                  </div>
+                  <!-- Checkbox -->
+                  <div class="col-sm-auto">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck1">
+                      <label class="form-check-label" for="gridCheck1">Monte</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Input 3 -->
+                <div class="form-group row">
+                  <!-- Label -->
+                  <label for="input3" class="col-sm-auto col-form-label">Input 3</label>
+                  <!-- Input -->
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="input3" placeholder="C">
+                  </div>
+                  <!-- Checkbox -->
+                  <div class="col-sm-auto">
+                    <div class="form-check mb-2 mr-sm-2">
+                      <input class="form-check-input" type="checkbox" id="gridCheck1">
+                      <label class="form-check-label" for="gridCheck1">Monte</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- </fieldset> -->
+                <!-- BUTTON -->
+                <div class="form-group row">
+                  <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Output -->
+          <div class="card-body">
+            <div id="line-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Output -->
+      <br>
+      <div class="container">
+        <iframe frameBorder=0 width="100%" height="500px" onkeypress="load" src="plot.html" seamless></iframe>
+      </div>
+    </main>
+    <div class="container"><hr>
+      <footer class="mastfoot mt-auto">
+        <div class="inner text-muted">
+          <p>Some footer stuff</p>
+        </div>
+      </footer>
+    </div>
+
+
+
+    <div class="container">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+          <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Material Design Switch Demos</div>
+
+              <!-- List group -->
+              <ul class="list-group">
+                  <li class="list-group-item">
+                      Bootstrap Switch Default
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionDefault" class="label-default"></label>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                      Bootstrap Switch Primary
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                      Bootstrap Switch Success
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionSuccess" class="label-success"></label>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                      Bootstrap Switch Info
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionInfo" class="label-info"></label>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                      Bootstrap Switch Warning
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionWarning" class="label-warning"></label>
+                      </div>
+                  </li>
+                  <li class="list-group-item">
+                      Bootstrap Switch Danger
+                      <div class="material-switch pull-right">
+                          <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
+                          <label for="someSwitchOptionDanger" class="label-danger"></label>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/plot.js"></script>
+  </body>
+</html>
